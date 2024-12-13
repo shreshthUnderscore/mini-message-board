@@ -1,5 +1,12 @@
 <ul>
-  <% message.map((messages) => { %>
-  <li><%= messages %></li>
+  <% messages.forEach(message => { %>
+  <li>
+    <strong><%= message.user %></strong>: <%= message.text %> <br />
+    <small
+      >Added on: <%= message.added.toLocaleString("en-IN", { timeZone:
+      "Asia/Kolkata" }) %></small
+    >
+  </li>
   <% }) %>
 </ul>
+<a href="/new"> <h1>Submit a message</h1></a>
